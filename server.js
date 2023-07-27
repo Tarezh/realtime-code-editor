@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express();
-const http = require('http')
+const http = require('http');
 const {Server} = require('socket.io');
 const ACTIONS = require('./src/Actions');
 const path = require('path');
@@ -9,7 +9,7 @@ const server = http.createServer(app);
 
 const io = new Server(server);
 
-app.use(express.static('build'))// static middleware fro production it serves to index.html of build
+app.use(express.static('build'))// static middleware for production it serves to index.html of build
 app.use((req,res,next)=>{
     res.sendFile(path.join(__dirname,'build','index.html'))
 });
